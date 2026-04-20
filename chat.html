@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+</head>
+<body>
+
+  <section class="chat">
+      <section class="chat__messages">
+      </section>
+
+      <form class="chat__form">
+          <input type="text" class="chat__input" placeholder="Digite uma mensagem" required />
+          <button type="submit" class="chat__button">
+              <span class="material-symbols-outlined">Enviar</span>
+          </button>
+      </form>
+  </section>
+
+  <footer>
+        <p>Trabalho de Programação para Internet</p>
+        <div style="margin: 10px 0;">
+            <img src="santa_cruz_icon.png" alt="Campus Santa Cruz">
+            <span>IFRN campus Santa Cruz</span>
+        </div>
+        <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+        <small>Desenvolvedores: Ávilla Jaylle de Souza Ferreira, Carlos André Campelo Araújo, Maria Camilly Victória de Souza Silva e Maria Jainara da Silva Filho</small>
+  </footer>
+
+  <script>
+    let logado = localStorage.getItem("logado");
+
+    if(logado != "true"){
+      window.location.href = "index.html";
+    }
+
+    let usuario = localStorage.getItem("usuarioAtivo");
+
+    const form = document.querySelector(".chat__form");
+    const input = document.querySelector(".chat__input");
+    const messages = document.querySelector(".chat__messages");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      let texto = input.value;
+
+      if(texto === "") return;
+
+      let novaMsg = document.createElement("div");
+      novaMsg.classList.add("message--self");
+      novaMsg.innerText = texto;
+
+      messages.appendChild(novaMsg);
+
+      input.value = "";
+    });
+  </script>
+
+</body>
+</html>
