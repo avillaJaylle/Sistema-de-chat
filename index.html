@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Chat</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <input type="text" id="usuario" placeholder="Usuário">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+
+    <script>
+const usuarios = [
+  {user: "mimmarcelo", pass: "Teste123"},
+];
+
+function login() {
+  let u = document.getElementById("usuario").value;
+  let s = document.getElementById("senha").value;
+
+  let valido = usuarios.find(x => x.user == u && x.pass == s);
+
+  if(valido){
+    localStorage.setItem("logado", "true");
+    window.location.href = "chat.html";
+  } else {
+    alert("Login inválido");
+  }
+}
+</script>
+    
+</body>
+</html>
