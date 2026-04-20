@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SistecChat - Login</title>
+</head>
+<body>
+
+    <header>
+        <img src="logo_ifrn.png" alt="Logo IFRN"> 
+        <span style="font-size: 24px; font-weight: bold; vertical-align: middle;">SistecChat</span>
+    </header>
+
+    <main>
+        <div class="login-card">
+            <h1>Login</h1>
+            <input type="text" id="usuario" placeholder="Usuário">
+            <input type="password" id="senha" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p id="mensagem-erro" style="color: red; display: none; font-size: 14px;">Usuário ou senha incorretos!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Trabalho de Programação para Internet</p>
+        <div style="margin: 10px 0;">
+            <img src="santa_cruz_icon.png" alt="Campus Santa Cruz">
+            <span>IFRN campus Santa Cruz</span>
+        </div>
+        <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+        <small>Desenvolvedores: Ávilla Jaylle de Souza Ferreira, Carlos André Campelo Araújo, Maria Camilly Victória de Souza Silva e Maria Jainara da Silva Filho</small>
+    </footer>
+
+    <script>
+        const usuarios = [
+          {user: "mimmarcelo", pass: "Teste123"},
+          {user: "aluno1", pass: "1234"},
+          {user: "aluno2", pass: "4321"},
+          {user: "aluno3", pass: "abcd"},
+          {user: "aluno4", pass: "0000"}
+        ];
+
+        function login() {
+          let u = document.getElementById("usuario").value;
+          let s = document.getElementById("senha").value;
+          let erro = document.getElementById("mensagem-erro");
+
+          let valido = usuarios.find(x => x.user == u && x.pass == s);
+
+          if(valido){
+            localStorage.setItem("logado", "true");
+            localStorage.setItem("usuarioAtivo", u);
+            window.location.href = "chat.html";
+          } else {
+            erro.style.display = "block";
+          }
+        }
+    </script> 
+</body>
+</html>
