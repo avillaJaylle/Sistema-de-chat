@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias | ChatSchool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-slate-100 flex flex-col min-h-screen">
+
+    <header class="bg-blue-800 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold flex items-center gap-2"><img src="img/icone.png" alt="SchoolChat Icon"
+                    class="h-6 w-6 rounded-full shadow-md">ChatSchool</h1>
+            <nav class="flex items-center gap-4 text-sm font-medium">
+                <a href="chat.html" class="hover:text-blue-200 transition">Voltar ao Chat</a>
+                <a href="index.html" onclick="localStorage.clear()"
+                    class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded transition">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto p-6 max-w-4xl">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b pb-4">Tecnologias e Referências</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Tecnologias Front-end</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600">
+                        <li><strong>HTML5:</strong> Estruturação semântica das páginas.</li>
+                        <li><strong>Tailwind CSS:</strong> Framework CSS para estilização rápida e responsiva.</li>
+                        <li><strong>JavaScript:</strong> Lógica de autenticação e simulação do chat.</li>
+                        <li><strong>LocalStorage/URLSearchParams:</strong> Armazenamento de sessão e controle de rotas
+                            sem uso de backend.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Referências e Repositório</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-600">
+                        <li><a href="#" class="text-blue-500 hover:underline">Repositório Oficial no GitHub</a></li>
+                        <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank"
+                                class="text-blue-500 hover:underline">MDN Web Docs</a></li>
+                        <li><a href="https://tailwindcss.com/docs" target="_blank"
+                                class="text-blue-500 hover:underline">Documentação do Tailwind</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 p-6 text-slate-600 text-sm mt-auto">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="img/logo-ifrn.png" alt="Logo IFRN" class="h-10">
+                <p>IFRN Campus Santa Cruz</p>
+            </div>
+            <div class="text-center">
+                <p class="font-semibold">Trabalho de Programação para Internet</p>
+                <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+            </div>
+            <ul class="text-right list-none">
+                <li class="font-bold">Desenvolvedores:</li>
+                <li>Ávilla Jaylle de Souza Ferreira</li>
+                <li>Carlos André Campelo Araújo</li>
+                <li>Maria Camilly Victória de Souza Silva</li>
+                <li>Maria Jainara da Silva Filho</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
